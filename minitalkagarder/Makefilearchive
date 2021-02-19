@@ -1,0 +1,29 @@
+##
+## Makefile for  in /home/bertra_l//minitalk
+## 
+## Made by baptiste bertrand-rapello
+## Login   <bertra_l@epitech.net>
+## 
+## Started on  Tue Mar 19 11:48:45 2013 baptiste bertrand-rapello
+## Last update Tue Mar 19 17:19:22 2013 baptiste bertrand-rapello
+##
+
+SRC =	./minitalk/main_serveur.c \
+	./minitalk/main_client.c
+
+NAME = serveur
+
+all: $(NAME)
+
+$(NAME):
+	cc -o $(NAME) main_serveur.c -lm
+	cc -o client main_client.c -lm
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f serveur
+	rm -f client
+
+re: fclean all
